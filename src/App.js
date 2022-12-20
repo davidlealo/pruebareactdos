@@ -1,24 +1,20 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-
-
-
 import './App.css';
+
 import Context from "./Context";
 import { useEffect, useState } from "react";
-
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./views/Home";
+import Pizza from './views/Pizza';
+import Carrito from './views/Carrito';
 
 export default function App() {
   const endpoint = "./pizzas.json";
   const [pizzas, setPizzas] = useState([]);
-  const sharedData = { pizzas, setPizzas };
+  const [pizzaDetalle, setPizzaDetalle] = useState('')
+  const sharedData = { pizzas, setPizzas, pizzaDetalle, setPizzaDetalle };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,30 +33,11 @@ export default function App() {
 
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path='/pizza/:id' element={<Pizza/>} />
+            <Route path='/carrito' element={<Carrito/>} />
+            
           </Routes>
-          <Container fluid className='mx-6 my-3 p-2' >
-            <Row className="justify-content-md-center">
-                {pizzas.map(
-                  pizza => {
-                    return (
-
-                      <Card style={{ width: '20rem' }} key={pizza.id} className='m-4'>
-                        <Card.Img variant="top" src={pizza.img} className='m-2' />
-                        <Card.Body>
-                          <Card.Title style={{textTransform: 'uppercase'}}>{pizza.name}</Card.Title>
-                          <Card.Text>
-                            {pizza.desc.substring(0, 140)}
-                          </Card.Text>
-                          <Button variant="info" className='m-1'>Ver más 👀 </Button>
-                          <Button variant="warning" className='m-1'>Añadir 🛒</Button>
-                        </Card.Body>
-                      </Card>
-
-                    )
-                  }
-                )}
-            </Row>
-          </Container>
+          
         </BrowserRouter>
       </Context.Provider>
 
