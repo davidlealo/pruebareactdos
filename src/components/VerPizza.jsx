@@ -68,7 +68,7 @@ function VerPizza() {
                                 }
                             </ListGroup>
                             <Button variant="outline-success" className='m-2' onClick={volver}>Volver 🔙</Button>
-                            <Button variant="outline-warning" className='m-2' >Añadir 🛒</Button>
+                            <Button variant="warning" className='m-2' >Añadir 🛒</Button>
                             <Card.Title className="my-2">Precio: {pizza.price}</Card.Title>
                             </Card.Body>
                                   </Card>
