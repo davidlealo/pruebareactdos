@@ -16,6 +16,9 @@ const navigate = useNavigate()
     const irPizza = () => {
         navigate(`/pizza/${pizzaDetalle}`)
     }
+    function currencyFormat(num) {
+        return '$' + num.toFixed().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+     }
 
     return (
         <div>
@@ -34,7 +37,7 @@ const navigate = useNavigate()
                           </Card.Text>
                           <Button variant="info" className='m-1' onMouseOver={() => setPizzaDetalle(pizza.id)} onClick={irPizza}>Ver más 👀 </Button>
                           <Button variant="warning" className='m-1'>Añadir 🛒</Button>
-                          <Card.Title className="my-2">Precio: {pizza.price}</Card.Title>
+                          <Card.Title className="my-2">Precio: {currencyFormat(pizza.price)}</Card.Title>
                         </Card.Body>
                       </Card>
 

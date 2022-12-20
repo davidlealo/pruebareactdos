@@ -21,7 +21,9 @@ function VerPizza() {
         navigate(`/`)
     }
 
-    
+    function currencyFormat(num) {
+        return '$' + num.toFixed().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+     }
 
 
     useEffect(() => {
@@ -69,7 +71,7 @@ function VerPizza() {
                             </ListGroup>
                             <Button variant="outline-success" className='m-2' onClick={volver}>Volver 🔙</Button>
                             <Button variant="warning" className='m-2' >Añadir 🛒</Button>
-                            <Card.Title className="my-2">Precio: {pizza.price}</Card.Title>
+                            <Card.Title className="my-2">Precio: {currencyFormat(pizza.price)}</Card.Title>
                             </Card.Body>
                                   </Card>
                                 </div>
