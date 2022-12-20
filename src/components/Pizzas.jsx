@@ -34,6 +34,7 @@ const navigate = useNavigate()
                           </Card.Text>
                           <Button variant="info" className='m-1' onMouseOver={() => setPizzaDetalle(pizza.id)} onClick={irPizza}>Ver más 👀 </Button>
                           <Button variant="warning" className='m-1'>Añadir 🛒</Button>
+                          <Card.Title className="my-2">Precio: {pizza.price}</Card.Title>
                         </Card.Body>
                       </Card>
 
