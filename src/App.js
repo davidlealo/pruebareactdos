@@ -47,12 +47,12 @@ export default function App() {
                       <Card style={{ width: '20rem' }} key={pizza.id} className='m-4'>
                         <Card.Img variant="top" src={pizza.img} className='m-2' />
                         <Card.Body>
-                          <Card.Title>{pizza.name}</Card.Title>
+                          <Card.Title style={{textTransform: 'uppercase'}}>{pizza.name}</Card.Title>
                           <Card.Text>
                             {pizza.desc.substring(0, 140)}
                           </Card.Text>
-                          <Button variant="info" className='m-1'>Detalles</Button>
-                          <Button variant="danger" className='m-1'>Pedir</Button>
+                          <Button variant="info" className='m-1'>Ver más 👀 </Button>
+                          <Button variant="warning" className='m-1'>Añadir 🛒</Button>
                         </Card.Body>
                       </Card>
 

@@ -44,10 +44,11 @@
   padding: 3%;
   background-image: linear-gradient(
     rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)
+    rgba(0, 0, 0, 0.7)
   ), url("https://images.unsplash.com/photo-1617343283366-c89210ec3e4f");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   color:azure;
+  height: 30vh;
 }
